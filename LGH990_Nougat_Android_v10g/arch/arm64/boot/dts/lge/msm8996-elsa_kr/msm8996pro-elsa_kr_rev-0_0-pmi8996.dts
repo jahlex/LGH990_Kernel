@@ -67,7 +67,7 @@
 };
 
 &mdss_dsi0 {
-	qcom,dsi-pref-prim-pan = <&dsi_sw49407_dsc_video>;
+	qcom,dsi-pref-prim-pan = <&dsi_sw49407_dsc_cmd>;
 	lge,extra-gpio-names = "vddio", "vpnl";
 
 	lge,gpio-vddio = <&tlmm 79 0>;
@@ -75,7 +75,7 @@
 };
 
 &mdss_dsi1 {
-	qcom,dsi-pref-prim-pan = <&dsi_sw49407_dsc_video>;
+	qcom,dsi-pref-prim-pan = <&dsi_sw49407_dsc_cmd>;
 	lge,extra-gpio-names = "vddio", "vpnl";
 
 	lge,gpio-vddio = <&tlmm 79 0>;
@@ -185,7 +185,7 @@
 };
 
 &pmi8994_charger {
-    lge,lge_otp_enable;
+	lge,lge_otp_enable;
 };
 
 /* set unused and changed assigne gpios on here */

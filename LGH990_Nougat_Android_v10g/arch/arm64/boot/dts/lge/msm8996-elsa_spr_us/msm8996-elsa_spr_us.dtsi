@@ -10,15 +10,17 @@
  * GNU General Public License for more details.
  */
 
+#include "../../../../../../build/include/generated/autoconf.h"
+
 #include "msm8996-elsa_spr_us-pinctrl.dtsi"
 #include "msm8996-elsa_spr_us-misc.dtsi"
 #include "msm8996-elsa_spr_us-panel.dtsi"
 #include "msm8996-elsa_spr_us-pm.dtsi"
 #include "msm8996-elsa_spr_us-sound.dtsi"
-#include "msm8996-elsa_spr_us-connectivity.dtsi"
+#include "../msm8996-elsa-connectivity.dtsi"
 #include "msm8996-elsa_spr_us-nfc.dtsi"
-#include "msm8996-elsa_spr_us-hdmi.dtsi"
-#include "msm8996-elsa_spr_us-fingerprint.dtsi"
+#include "../msm8996-elsa-hdmi.dtsi"
+#include "../msm8996-fingerprint-fpc1022.dtsi"
 #include "msm8996-elsa_spr_us-usb.dtsi"
 
 / {
@@ -35,11 +37,8 @@
 			label = "crash_fb_mem";
 		};
 
-		/delete-node/ cont_splash_mem@83401000;
-
-		cont_splash_mem: cont_splash_mem@84201000 {
-			reg = <0 0x84201000 0 0x15FF000>;
-			label = "cont_splash_mem";
+		cont_splash_mem: cont_splash_mem@83401000 {
+			status = "disabled";
 		};
 
 		/delete-node/ dfps_data_mem@83400000;
@@ -151,7 +150,7 @@
 };
 
 &sdcc1_ice {
-        status = "ok";
+	status = "ok";
 };
 
 &ufsphy1 {
@@ -249,7 +248,7 @@
 		qcom,fast-avg-setup = <0>;
 	};
 
-        chan@72 {
+	chan@72 {
 		label = "xo_therm";
 		reg = <0x72>;
 		qcom,decimation = <0>;
@@ -940,13 +939,13 @@
 };
 
 &pcie1 {
-       status = "disabled";
+	status = "disabled";
 };
 
 &pcie2 {
-       status = "disabled";
+	status = "disabled";
 };
 
 &pil_modem {
-       /delete-property/ qcom,mx-spike-wa;
+	/delete-property/ qcom,mx-spike-wa;
 };

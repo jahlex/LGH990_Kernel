@@ -1,15 +1,15 @@
 #!/bin/bash
-export kernel=LGH990-jahlex
+export kernel=LGH990-stock-jahlex
 export outdir=/home/alex/out
 export makeopts="-j$(nproc)"
 export zImagePath="build/arch/arm64/boot/Image.gz-dtb"
 export KBUILD_BUILD_USER=Jahlex
 export KBUILD_BUILD_HOST=Jahlex
-export CROSS_COMPILE=/home/alex/gcc-linaro-7.1.1-2017.08-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-
+export CROSS_COMPILE=/home/alex/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 export ARCH=arm64
 export shouldclean="1"
 
-export version=0.0
+export version=0.1
 export RDIR=$(pwd)
 export KERNEL_COMPRESSION_SUFFIX="gz"
 
@@ -19,7 +19,7 @@ function build() {
         rm -rf zip/modules
         rm -f zip/Image.gz-dtb
     fi
-    export deviceconfig="current_elsa_jahlex_defconfig"
+    export deviceconfig="elsa_global_com-vanilla_defconfig"
     export device=$1
     mkdir -p build
     mkdir -p zip/modules
